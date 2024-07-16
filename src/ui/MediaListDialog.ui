@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MediaListDialog</class>
+ <widget class="QDialog" name="MediaListDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>643</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>播放列表</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="audio">
+      <attribute name="title">
+       <string>音频</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QListView" name="audio_list">
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListView" name="audio_details">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QToolButton" name="select_a_button">
+           <property name="text">
+            <string>打开</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="new_a_button">
+           <property name="text">
+            <string>新建</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="insert_a_button">
+           <property name="text">
+            <string>添加</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="drop_a_button">
+           <property name="text">
+            <string>移除</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="video">
+      <attribute name="title">
+       <string>视频</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QListView" name="video_list">
+         <property name="maximumSize">
+          <size>
+           <width>240</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QListView" name="video_details">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QToolButton" name="select_v_button">
+           <property name="text">
+            <string>打开</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="new_v_button">
+           <property name="text">
+            <string>新建</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="insert_v_button">
+           <property name="text">
+            <string>增加</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="drop_v_button">
+           <property name="text">
+            <string>移除</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>insert_v_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MediaListDialog</receiver>
+   <slot>append_files()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>new_a_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MediaListDialog</receiver>
+   <slot>new_list()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>new_v_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MediaListDialog</receiver>
+   <slot>new_list()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>drop_a_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MediaListDialog</receiver>
+   <slot>drop_list()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>357</x>
+     <y>226</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>drop_v_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MediaListDialog</receiver>
+   <slot>drop_list()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>71</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>insert_a_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MediaListDialog</receiver>
+   <slot>append_files()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>363</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>161</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>new_list()</slot>
+  <slot>append_files()</slot>
+  <slot>drop_list()</slot>
+  <slot>rename_list(QModelIndex)</slot>
+ </slots>
+</ui>
